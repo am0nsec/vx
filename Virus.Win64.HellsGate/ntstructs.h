@@ -1,7 +1,7 @@
 /**
 * @file     ntstructs.h
 * @date     30-07-2020
-* @author   Paul Laîné (@am0nsec)
+* @author   Paul Laîné (@am0nsec) & smelly__vx (@RtlMateusz) 
 * @version  1.0
 * @brief    Dynamically extracting and invoking syscalls from in-memory modules.
 * @details
