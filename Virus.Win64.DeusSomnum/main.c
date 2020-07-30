@@ -1,3 +1,15 @@
+/**
+* @file     main.c
+* @date     30-07-2020
+* @author   Paul Laîné (@am0nsec)
+* @version  1.0
+* @brief    Leverage the Windows Power Management API for code execution and defense evasion.
+* @details
+* @link     https://vxug.fakedoma.in/papers/VXUG/Exclusive/AbusingtheWindowsPowerManagementAPI.pdf
+*
+* @copyright This project has been released under the GNU Public License v3 license.
+*/
+
 #include <windows.h>
 #include "ntstructs.h"
 
