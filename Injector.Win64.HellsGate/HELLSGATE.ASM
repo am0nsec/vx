@@ -1,5 +1,5 @@
 ; @file			HELLSGATE.ASM
-; @data			4-08-2020
+; @data			07-08-2020
 ; @author		Paul Laîné (@am0nsec)
 ; @version		1.0
 ; @brief		Dynamically extracting and invoking syscalls from in-memory modules.
