@@ -358,10 +358,10 @@ HRESULT Si256BlockTest() {
 }
 
 int main() {
-	wprintf(L"-------------------------------------------------------------------------------\n");
-	wprintf(L" AES-128 and AES-256 CBC Encryption and Decryption using AES-NI instruciton set\n");
-	wprintf(L"               Copyright (C) Paul Laine (@am0nsec)\n");
-	wprintf(L"-------------------------------------------------------------------------------\n\n");
+	wprintf(L"---------------------------------------------------------------------------------\n");
+	wprintf(L" AES-128 and AES-256 CBC Encryption and Decryption using AES-NI instruction set\n");
+	wprintf(L"                      Copyright (C) Paul L. (@am0nsec)\n");
+	wprintf(L"---------------------------------------------------------------------------------\n\n");
 
 	// Check whether the AES-NI instruction set is enabled.
 	if (!SiIsAESNIEnabled())
