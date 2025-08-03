@@ -1,6 +1,6 @@
 ; @file        DEUSSOMNUM.ASM
 ; @date        08-08-2020
-; @author      Paul Laîné (@am0nsec)
+; @author      Paul L. (@am0nsec)
 ; @version     1.0
 ; @brief       Leverage the Windows Power Management API for code execution and defense evasion.
 ; @details	
