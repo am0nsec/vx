@@ -1,6 +1,6 @@
 ; @file      SHELLCODE.INC
 ; @data      07-08-2020
-; @author    Paul Laîné (@am0nsec)
+; @author    Paul L. (@am0nsec)
 ; @version   1.0
 ; @brief     Variable and shellcode for self-process injection.
 ; @details	
